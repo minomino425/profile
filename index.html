@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js" type="module"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        position: relative;
+      }
+      main {
+        background-color: #fca0ba;
+      }
+      .eyeWrap {
+        position: fixed;
+        max-width: 220px;
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        top: 30%;
+        left: 50%;
+        transform: translate(-180%, -50%);
+      }
+      #webgl {
+        position: fixed;
+        clip-path: circle(220px);
+        transform: translateX(-300px);
+      }
+      @media (max-width: 768px) {
+        .eyeWrap {
+          width: 60%;
+        }
+      }
+      .eye {
+        width: 90px;
+        height: 90px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+      }
+      .eye::after {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+      }
+      .fukidashi {
+        max-width: 500px;
+        width: 45vw;
+        position: fixed;
+        top: 50%;
+        right: 25%;
+        transform: translate(0, -50%);
+      }
+      .comment {
+        max-width: 500px;
+        width: 45vw;
+        position: fixed;
+        top: 50%;
+        right: 25%;
+        transform: translate(0, -50%);
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro",
+          "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック",
+          "MS PGothic", sans-serif;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        z-index: 1;
+        text-align: center;
+      }
+      .section {
+        height: 100vh;
+        &.is-active{
+          .comment{
+            opacity: 1;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="webgl"></div>
+      <div class="eyeWrap">
+        <div class="eye eye1"></div>
+        <div class="eye eye2"></div>
+      </div>
+      <div class="section section01" data-color="#fca0ba">
+        <p class="comment">
+          改めまして、蓑田朋未です。<br><br>
+          1995年生まれの28歳、<br>
+          兵庫県明石市出身です！
+        </p>
+      </div>
+      <div class="section section02" data-color="#d2f0a2">
+        <p class="comment">
+          明石は田舎でも都会でもない中途半端な町ですが、<br>
+          海があって落ち着くところです。
+        </p>
+      </div>
+      <div class="section section03" data-color="#dfc7fc">
+        <p class="comment">
+          今は東京都町田市に、<br>
+          昨年結婚した夫と2人で暮らしています。
+        </p>
+      </div>
+      <div class="section section04" data-color="#fca0ba">
+        <p class="comment">
+          町田は駅前は栄えていますが<br>駅を離れると自然豊かで、<br>
+          中途半端なところが<br>どこか明石に似ていて気に入っています。
+        </p>
+      </div>
+      <div class="fukidashi">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          style="enable-background: new 0 0 800 716.961"
+          viewBox="0 0 800 716.961"
+        >
+          <path
+            d="M269.796 22.784C99.792 39.707 53.947 158.477 115.886 201.646c61.94 43.17-90.093 33.784-95.724 148.279-5.63 114.492 137.017 116.37 114.493 150.155-22.524 33.784-37.538 79.563 26.277 116.736 63.816 37.174 245.88 14.352 281.542 28.579 35.662 14.224 22.363 40.427 18.769 53.642 11.262 0 52.555-54.681 61.94-53.617 9.384 1.062 56.254-1.197 120.209-1.197 56.916 0 97.347-106.584 35.577-119.743 97.601-7.509 158.78-264.65 19.328-296.559C800.044 124.027 669.585 37.059 585.124 27.673c-84.464-9.383-225.419-13.837-315.328-4.889z"
+            style="fill: #fff"
+          />
+        </svg>
+      </div>
+    </main>
+  </body>
+  <script src="//cdn.jsdelivr.net/npm/gsap@3.7.0/dist/gsap.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
+  <script>
+    const body = document.querySelector("body");
+    gsap.utils.toArray(".section").forEach(function (elem) {
+      let color = elem.getAttribute("data-color");
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 5%",
+        end: "bottom 5%",
+        markers: false,
+        toggleClass: {
+            targets: elem,
+            className: "is-active",
+        },
+        onToggle: () =>
+          gsap.to("main", {
+            backgroundColor: color,
+            duration: 1.4,
+          }),
+      });
+    });
+  </script>
+</html>
