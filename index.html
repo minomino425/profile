@@ -54,19 +54,17 @@
         left: 10px;
       }
       .fukidashi {
-        max-width: 500px;
         width: 45vw;
         position: fixed;
         top: 50%;
-        right: 25%;
+        right: 8%;
         transform: translate(0, -50%);
       }
       .comment {
-        max-width: 500px;
         width: 45vw;
         position: fixed;
         top: 50%;
-        right: 25%;
+        right: 8%;
         transform: translate(0, -50%);
         font-size: 16px;
         letter-spacing: 0.05em;
@@ -78,10 +76,38 @@
         z-index: 1;
         text-align: center;
       }
+      .comment2 {
+        width: 45vw;
+        position: fixed;
+        top: 35%;
+        right: 8%;
+        transform: translate(0, -50%);
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro",
+          "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック",
+          "MS PGothic", sans-serif;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        z-index: 1;
+        text-align: center;
+      }
+      .pic {
+        width: 20vw;
+        position: fixed;
+        top: 60%;
+        right: 20%;
+        transform: translate(0, -50%);
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+      }
       .section {
         height: 100vh;
-        &.is-active{
-          .comment{
+        &.is-active {
+          .comment,
+          .comment2,
+          .pic {
             opacity: 1;
           }
         }
@@ -97,27 +123,41 @@
       </div>
       <div class="section section01" data-color="#fca0ba">
         <p class="comment">
-          改めまして、蓑田朋未です。<br><br>
-          1995年生まれの28歳、<br>
+          改めまして、蓑田朋未です。<br /><br />
+          1995年生まれの28歳、<br />
           兵庫県明石市出身です！
         </p>
       </div>
       <div class="section section02" data-color="#d2f0a2">
-        <p class="comment">
-          明石は田舎でも都会でもない中途半端な町ですが、<br>
-          海があって落ち着くところです。
+        <p class="comment2">
+          神戸の隣にある明石は<br />田舎でも都会でもない中途半端な町ですが、<br />
+          海があって落ち着くところです。<br /><br />
+          明石海峡大橋を渡れば、淡路島にもすぐ行けます。
         </p>
+        <img src="../i44_web.jpg" alt="" class="pic" />
       </div>
       <div class="section section03" data-color="#dfc7fc">
         <p class="comment">
-          今は東京都町田市に、<br>
-          昨年結婚した夫と2人で暮らしています。
+          大学卒業後上京して、<br />今は東京都町田市に<br />
+          昨年結婚した夫と2人で暮らしています。<br /><br />
+          中途半端な都会具合が<br />どこか明石に似ていて気に入っています。
         </p>
       </div>
-      <div class="section section04" data-color="#fca0ba">
+      <div class="section section04" data-color="#ffffbc">
         <p class="comment">
-          町田は駅前は栄えていますが<br>駅を離れると自然豊かで、<br>
-          中途半端なところが<br>どこか明石に似ていて気に入っています。
+          前職では、乃木坂にあるWeb制作会社で<br />WordPressやShopifyなどをメインに、<br />コーポレートサイトや<br />アパレルのECサイトなどの<br />コーディングをしていました。
+        </p>
+      </div>
+      <div class="section section05" data-color="#fca0ba">
+        <p class="comment">
+          ソニックジャムに入社して<br />やってみたいことは、<br />WebGLなどを使ったリッチな演出のサイトや<br />ポップで遊び心溢れるデザインのサイトを<br />作ってみたいです。<br /><br />
+          また、WebアプリなどのUI設計が<br />考えられたサイトも作ってみたいです。
+        </p>
+      </div>
+      <div class="section section06" data-color="#d2f0a2">
+        <p class="comment">
+          人見知りで行動がゆっくりなので、<br>物静かなように見られますが、<br>見た感じよりは明るく打たれ強い性格だと思います。<br><br>
+          お酒も好きなので、皆さんとお酒を飲みながら<br>ゆっくりお話できたら嬉しいです！
         </p>
       </div>
       <div class="fukidashi">
@@ -147,8 +187,8 @@
         end: "bottom 5%",
         markers: false,
         toggleClass: {
-            targets: elem,
-            className: "is-active",
+          targets: elem,
+          className: "is-active",
         },
         onToggle: () =>
           gsap.to("main", {
