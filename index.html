@@ -21,7 +21,7 @@
         width: 20%;
         display: flex;
         justify-content: space-between;
-        top: 30%;
+        top: 18vw;
         left: 50%;
         transform: translate(-180%, -50%);
       }
@@ -59,6 +59,7 @@
         top: 50%;
         right: 8%;
         transform: translate(0, -50%);
+        pointer-events: none;
       }
       .comment {
         width: 45vw;
@@ -74,6 +75,7 @@
         opacity: 0;
         transition: opacity 0.3s ease-out;
         z-index: 1;
+        pointer-events: none;
         text-align: center;
       }
       .comment2 {
@@ -91,6 +93,7 @@
         transition: opacity 0.3s ease-out;
         z-index: 1;
         text-align: center;
+        pointer-events: none;
       }
       .pic {
         width: 20vw;
@@ -101,13 +104,26 @@
         z-index: 2;
         opacity: 0;
         transition: opacity 0.3s ease-out;
+        pointer-events: none;
+      }
+      .pic2 {
+        width: 18vw;
+        position: fixed;
+        top: 58%;
+        right: 22%;
+        transform: translate(0, -50%);
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        pointer-events: none;
       }
       .section {
         height: 100vh;
         &.is-active {
           .comment,
           .comment2,
-          .pic {
+          .pic,
+          .pic2 {
             opacity: 1;
           }
         }
@@ -154,10 +170,33 @@
           また、WebアプリなどのUI設計が<br />考えられたサイトも作ってみたいです。
         </p>
       </div>
-      <div class="section section06" data-color="#d2f0a2">
+      <div class="section section06" data-color="#dfc7fc">
+        <p class="comment2">趣味は音楽鑑賞、<br />マイブームはお菓子作りです。<br />特技は人の誕生日を覚えることです。</p>
+        <img src="../IMG_7923.jpg" alt="" class="pic2" />
+      </div>
+      <div class="section section07" data-color="#d2f0a2">
+        <p class="comment2">ランチインタビュー第一回は鶴の恩返し会。<br />遠藤さん、中田さんと<br />お寿司を食べに行き、<br />休日どんな過ごし方をしているかお聞きしました。</p>
+        <img src="../IMG_5831.jpg" alt="" class="pic2" />
+      </div>
+      <div class="section section07" data-color="#ffffbc">
+        <p class="comment2">ランチインタビュー第二回は<br />メンターメンティー会。<br /><br />子どもの頃どんな遊びをしていたかについて<br />お聞きしました。</p>
+        <img src="../IMG_6290.jpg" alt="" class="pic2" />
+      </div>
+      <div class="section section07" data-color="#dfc7fc">
+        <p class="comment2">ランチインタビュー第三回はメンズ会。<br />正山さんと國井さんと、<br />またお寿司を食べに行きました。<br /><br />東京育ちのお2人に、<br />東京の好きな街についてお聞きしました。</p>
+        <img src="../IMG_5831.jpg" alt="" class="pic2" />
+      </div>
+      <div class="section section08" data-color="#ffffbc">
+        <p class="comment2">ランチインタビュー第四回はフロントエンド会。<br />竹内さんと森田さんと、<br />おしゃれなパスタを食べながら<br />エンジニアとしての今後のビジョンを熱く語り合いました。</p>
+        <img src="../IMG_7451.jpg" alt="" class="pic2" />
+      </div>
+      <div class="section section09" data-color="#ffffbc">
+        <p class="comment">4回のランチを通して、<br />入社する前からソニックジャムの皆さんは<br />物腰柔らかな方が多いイメージでしたが、<br />実際も皆さん本当に優しくお話ししやすかったです。<br /><br />（自分もシャキシャキしてるタイプじゃないので、<br />とても居心地が良いです〜）</p>
+      </div>
+      <div class="section section10" data-color="#fca0ba">
         <p class="comment">
-          人見知りで行動がゆっくりなので、<br>物静かなように見られますが、<br>見た感じよりは明るく打たれ強い性格だと思います。<br><br>
-          お酒も好きなので、皆さんとお酒を飲みながら<br>ゆっくりお話できたら嬉しいです！
+          人見知りで行動がゆっくりなので、<br />物静かなように見られますが、<br />見た感じよりは明るい性格だと思います。<br /><br />
+          お酒も好きなので、皆さんとお酒を飲みながら<br />ゆっくりお話できたら嬉しいです！
         </p>
       </div>
       <div class="fukidashi">
